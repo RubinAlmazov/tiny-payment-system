@@ -3,7 +3,7 @@ services:
     image: postgres:17
     container_name: tiny-payment-postgres
     ports:
-      - "5432:5432"
+      - "5438:5432"
     environment:
       POSTGRES_DB: tiny_payment
       POSTGRES_USER: postgres

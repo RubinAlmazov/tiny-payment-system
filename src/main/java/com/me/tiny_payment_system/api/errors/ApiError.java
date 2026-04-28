@@ -1,6 +1,12 @@
 package com.me.tiny_payment_system.api.errors;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
-public record ApiError(String code, String message, Instant timestamp) {
+public record ApiError(
+        LocalDateTime timestamp,
+        int status,
+        String error,
+        String message,
+        String path
+) {
 }

@@ -1,24 +1,26 @@
 package com.me.tiny_payment_system.domain.db;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "users")
+@Getter
+@Setter
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Long getId() {
-        return id;
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    public UserEntity() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public UserEntity(String email) {
+        this.email = email;
     }
 }

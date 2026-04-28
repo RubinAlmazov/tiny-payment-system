@@ -1,4 +1,7 @@
 package com.me.tiny_payment_system.api.dto;
 
-public record UserDto() {
+public record UserDto(
+        Long id,
+        String email
+) {
 }
